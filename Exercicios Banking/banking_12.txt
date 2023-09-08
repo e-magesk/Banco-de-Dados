@@ -1,0 +1,1 @@
+π branch_name (σ branch_city ILIKE '%i%' ∧ branch_name ILIKE '%n' (branch))
