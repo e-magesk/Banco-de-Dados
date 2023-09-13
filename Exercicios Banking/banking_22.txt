@@ -1,0 +1,5 @@
+customer2 = ρ customer2 (customer)
+
+customer3 = customer ⨯ customer2
+
+π customer.customer_name (σ customer.customer_street = customer2.customer_street ∧ customer.customer_city ≠ customer2.customer_city (customer3))

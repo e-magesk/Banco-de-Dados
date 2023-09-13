@@ -1,0 +1,1 @@
+π account.account_number (σ account.balance < account2.balance (account ⨯ (ρ account2 (σ branch_name = 'North Town' (account)))))

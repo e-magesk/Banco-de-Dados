@@ -1,0 +1,7 @@
+loan2 = σ branch_name = 'Downtown' (loan)
+
+maiorValor = γ max(loan.amount)->maiorValor(loan2)
+
+loan3 = loan ⨯ maiorValor
+
+π loan_number (σ amount <= maiorValor (loan3))
