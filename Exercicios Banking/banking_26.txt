@@ -1,0 +1,7 @@
+HayesBranchs = ρ hayesBranch (π branch_name ((σ customer_name = 'Smith' (customer)) ⨝ borrower ⨝ loan ⨝ branch))
+
+AllClientsBranchs = (customer ⨝ depositor ⨝ account ⨝ branch) - ((σ customer_name = 'Smith' (customer)) ⨝ depositor ⨝ account ⨝ branch)
+
+FinalTabel = AllClientsBranchs x HayesBranchs
+
+π customer.customer_name (σ account.branch_name = hayesBranch.branch_name (FinalTabel))

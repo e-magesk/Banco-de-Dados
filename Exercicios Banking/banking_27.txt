@@ -1,0 +1,5 @@
+AllCustomersAccounts = customer ⨝ depositor ⨝ account ⨝ branch
+
+customers = gamma customer_name; count(*)->qtdCustomers ( AllCustomersAccounts )
+
+π customer.customer_name (σ qtdCustomers > 1 (customers))
