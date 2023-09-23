@@ -1,0 +1,5 @@
+customersLoan = customer ⨝ borrower ⨝ loan ⨝ branch
+
+customersLoanQtd = γ customer_name; count(*)-> qtdLoan (customersLoan)
+
+π customer_name (σ qtdLoan > 1 (customersLoanQtd))

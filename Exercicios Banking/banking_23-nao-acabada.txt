@@ -1,7 +1,0 @@
-branchHayes1 = π branch_name, branch_city, assets (σ customer_name = 'Hayes' (branch ⨝ account ⨝ depositor ⨝ customer))
-
-branchHayes2 = π branch_name, branch_city, assets (σ customer_name = 'Hayes' (branch ⨝ loan ⨝ borrower ⨝ customer))
-
-world = (branch ⨝ account ⨝ loan ⨝ depositor ⨝ borrower ⨝ customer) 
-
-world
