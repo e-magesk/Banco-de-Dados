@@ -1,0 +1,7 @@
+pilotosComCorridas = ρ drivers (π driverId,forename,surname,dob,nationality (races ⨝ results ⨝ drivers))
+
+pilotosSemCorridas = drivers - pilotosComCorridas
+
+pilotosSemCorridasNomeCompleto = π concat(forename, concat(' ', surname)) -> fullname (pilotosSemCorridas)
+
+π forename, surname (pilotosSemCorridas)

@@ -1,0 +1,7 @@
+gpsNomeComCorridas = π name (races ⨝ gps)
+
+gpsNome = π name (gps)
+
+gpsSemCorridas = gpsNome  - gpsNomeComCorridas
+
+π name (gpsSemCorridas)

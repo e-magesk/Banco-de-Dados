@@ -1,0 +1,7 @@
+circuitosComCorridas = π name (races ⨝ circuits)
+
+circuitos = π name (circuits)
+
+circuitosSemCorridas = circuitos - circuitosComCorridas
+
+π name (circuitosSemCorridas)

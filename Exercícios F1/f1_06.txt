@@ -1,0 +1,5 @@
+equipesComPodio = π constructorId, name, nationality (σ positionOrder ≤ 3(constructors ⨝ results))
+
+equipesSemPodio = constructors - equipesComPodio
+
+π name (equipesSemPodio)

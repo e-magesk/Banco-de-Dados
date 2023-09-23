@@ -1,0 +1,11 @@
+corridasECircuitos = circuits ⨝ races
+
+qtdCircuitos = γ circuits.name; count(*)->qtdCorridasNoCircuito (corridasECircuitos)
+
+corridasECircuitosComp = corridasECircuitos ⨝ qtdCircuitos ⨝ results ⨝ drivers
+
+qtdVezesNoCircuito = γ circuits.name, drivers.forename; count(*)->qtdVezesNoCircuito (corridasECircuitosComp)
+
+all = corridasECircuitosComp ⨝ qtdVezesNoCircuito
+
+π (concat(forename, concat(' ', surname)))->Piloto, (name)->Circuito (σ qtdCorridasNoCircuito = qtdVezesNoCircuito (all))

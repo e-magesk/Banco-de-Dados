@@ -1,0 +1,11 @@
+nacionalidadesEquipes = ρ nacionalidadesEquipes (π nationality (constructors))
+
+pilotosCom3Posicao = σ positionOrder ≤ 3 (results ⨝ drivers)
+
+nacionalidadesPilotos = π nationality (pilotosCom3Posicao)
+
+nacionalidadesRestantes = nacionalidadesPilotos - nacionalidadesEquipes
+
+π nationality (nacionalidadesRestantes)
+-- nacionalidadesPilotos
+-- nacionalidadesEquipes

@@ -1,0 +1,10 @@
+resCorCir1st = races ⨝ 
+circuits ⨝ σ positionOrder = 1 (results) ⨝ drivers
+
+equipesFrancesas = σ nationality LIKE 'French' (constructors)
+
+all = resCorCir1st ⟖ results.constructorId = constructors.constructorId equipesFrancesas
+
+projecao = π (constructors.name)->Equipe, (concat(forename, concat(' ', surname)))->Piloto, (circuits.name)->Circuito, (races.year)->Ano (all)
+
+π Equipe, Piloto, Circuito, Ano (projecao)
