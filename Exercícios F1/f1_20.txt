@@ -1,0 +1,9 @@
+sEr = seasons ⨝ races
+
+corridasAno = γ year; count(raceId)->corridasNoAno (sEr)
+
+tmpResul = corridasAno ⨝ races ⨝ results ⨝ constructors
+
+pontAno = γ year, constructorId; sum(points)->pontuacaoAno (tmpResul) 
+
+π (name)->Equipe, (year)->Ano (σ pontuacaoAno = 0 (pontAno ⨝ constructors))

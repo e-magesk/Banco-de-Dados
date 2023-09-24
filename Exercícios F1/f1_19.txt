@@ -1,0 +1,20 @@
+sEr = seasons ⨝ races
+
+corridasAno = γ year; count(raceId)->corridasNoAno (sEr)
+
+tmpResul = corridasAno ⨝ races ⨝ results ⨝ drivers
+
+part = γ year, driverId; count(driverId)->participacaoNoAno (tmpResul)
+
+partTodasCorridas = π year, driverId (σ corridasNoAno = participacaoNoAno (part ⨝ corridasAno))
+
+-- Os pilotos na tabela abaixo participaram de todas as corridas que tiveram nos respectivos anos
+ptsCorridas = results ⨝ races ⨝ partTodasCorridas
+
+pilotosNPontTodas = π driverId, year (σ points = 0 (ptsCorridas))
+
+pilotosPartTodas = π driverId, year (ptsCorridas)
+
+pilotosPontTodas = pilotosPartTodas - pilotosNPontTodas 
+
+π (concat(forename, concat(' ', surname)))->Piloto, (year)->Ano (pilotosPontTodas ⨝ drivers)

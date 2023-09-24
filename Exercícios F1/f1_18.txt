@@ -1,0 +1,13 @@
+tmpResul = seasons ⨝ races ⨝ results ⨝ constructors
+
+somaPtsAno = γ year, constructorId; sum(points)->pontuacaoAno (tmpResul)
+
+maxPtsAno = γ year; max(pontuacaoAno)->valorMaxAno (somaPtsAno)
+
+ptsAno = somaPtsAno ⨝ maxPtsAno
+
+melhoresEquipes = π constructorId, year (σ valorMaxAno = pontuacaoAno (ptsAno))
+
+contEquipes = γ constructorId; count(constructorId)->vezesMelhorDoAno (melhoresEquipes)
+
+π (name)->Equipe (σ vezesMelhorDoAno ≥ 2 (contEquipes ⨝ constructors))

@@ -1,0 +1,12 @@
+nacionalidadesEquipes = ρ nacionalidadesEquipes (π nationality (constructors))
+
+nacionalidadesPilotos = ρ nacionalidadesPilotos (π nationality (drivers))
+
+nacionalidadesRestantes = nacionalidadesEquipes - nacionalidadesPilotos
+
+π nationality (nacionalidadesRestantes)
+-- nacionalidadesPilotos
+-- nacionalidadesEquipes
+
+
+

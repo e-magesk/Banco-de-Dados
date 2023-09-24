@@ -1,0 +1,13 @@
+tmpResul = seasons ⨝ races ⨝ results ⨝ drivers
+
+somaPtsAno = γ year, driverId; sum(points)->pontuacaoAno (tmpResul)
+
+maxPtsAno = γ year; max(pontuacaoAno)->valorMaxAno (somaPtsAno)
+
+ptsAno = somaPtsAno ⨝ maxPtsAno
+
+melhoresPilotos = π driverId, year (σ valorMaxAno = pontuacaoAno (ptsAno))
+
+contPlts = γ driverId; count(driverId)->vezesMelhorDoAno (melhoresPilotos)
+
+π (concat(forename, concat(' ', surname)))->Piloto (σ vezesMelhorDoAno ≥ 4 (contPlts ⨝ drivers))
