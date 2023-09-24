@@ -1,0 +1,9 @@
+corridasEPilotos = races ⨝ results ⨝ drivers
+
+qtdCorridas = γ driverId; count(raceId)->qtdCorridas (corridasEPilotos)
+
+maiorNumCorridas = γ max(qtdCorridas)->maiorNumCorridas (qtdCorridas)
+
+juncaoCorridas = qtdCorridas ⨯ maiorNumCorridas
+
+π (concat(forename, concat(' ', surname)))->Piloto, (qtdCorridas)->Aparicoes (σ qtdCorridas = maiorNumCorridas (juncaoCorridas ⨝ drivers))

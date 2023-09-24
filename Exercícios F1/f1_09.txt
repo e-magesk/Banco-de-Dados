@@ -1,0 +1,5 @@
+corridasPorAno = γ races.year; count(*)->qtdCorridas (races)
+
+mediaCorridas = γ avg(qtdCorridas)->mediaCorridas (corridasPorAno)
+
+π (round(mediaCorridas))->MediaCorridas (mediaCorridas)

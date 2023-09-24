@@ -1,0 +1,7 @@
+corridasEcircuitos = circuits ⨝ races
+
+numeroCorridas = γ circuitId; count(raceId)->qtdCorridas (corridasEcircuitos)
+
+maiorNumCorridas = γ max(qtdCorridas)->maiorNumeroCorridas (numeroCorridas)
+
+π name (σ qtdCorridas = maiorNumeroCorridas ((circuits ⨝ numeroCorridas) ⨯ maiorNumCorridas))

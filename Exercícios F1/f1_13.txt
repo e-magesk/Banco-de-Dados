@@ -1,0 +1,11 @@
+corridasEEquipes = races ⨝ results ⨝ constructors
+
+qtdCorridas = γ constructorId; count(raceId)->qtdCorridas (corridasEEquipes)
+
+menorNumCorridas = γ min(qtdCorridas)->menorNumCorridas (qtdCorridas)
+
+juncaoCorridas = qtdCorridas ⨯ menorNumCorridas
+
+π (name)->Equipe, (qtdCorridas)->Aparicoes (σ qtdCorridas = menorNumCorridas (juncaoCorridas ⨝ constructors))
+
+-- τ raceId asc, constructorId asc (races ⨝ results ⨝ constructors) 

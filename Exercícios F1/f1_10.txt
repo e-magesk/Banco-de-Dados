@@ -1,0 +1,7 @@
+pilotosEAno = π seasons.year, results.driverId (seasons ⨝ races ⨝ results ⨝ drivers)
+
+pilotosPorAno = γ seasons.year; count(*)->qtdPilotosPorAno (pilotosEAno)
+
+mediaPilotos = γ avg(qtdPilotosPorAno)->mediaPilotos (pilotosPorAno)
+
+π (round(mediaPilotos))->MediaPilotos (mediaPilotos)

@@ -1,0 +1,7 @@
+gpsEcorridas = gps ⨝ races
+
+numVzsCorrida = γ circuitId; count(*)->qtdVzsCorrida (gpsEcorridas)
+
+maiorVzsCorrida = γ max(qtdVzsCorrida)->maiorNumeroVzsCorrida (numVzsCorrida)
+
+π (name)->GP, (qtdVzsCorrida)->Ocorrencias (σ maiorNumeroVzsCorrida = qtdVzsCorrida ((gpsEcorridas ⨝ numVzsCorrida) ⨯ maiorVzsCorrida)) 

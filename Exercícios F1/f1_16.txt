@@ -1,0 +1,7 @@
+seasonsEcorridas = seasons ⨝ races
+
+numCorridas = γ year; count(*)->qtdCorridas (seasonsEcorridas)
+
+maiorNumCorridas = γ max(qtdCorridas)->maiorNumeroCorridas (numCorridas)
+
+π (year)->Temporada, (qtdCorridas)->Corridas (σ maiorNumeroCorridas = qtdCorridas ((seasonsEcorridas ⨝ numCorridas) ⨯ maiorNumCorridas)) 
