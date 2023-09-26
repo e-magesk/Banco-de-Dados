@@ -1,0 +1,3 @@
+CorridasSeasonsResults = π raceId,year (races) ⨝ π year (seasons) ⨝ π raceId,constructorId (results)
+
+π round(MediaEquipes)→MediaEquipes (γ year; avg(constructorId)→MediaEquipes (CorridasSeasonsResults))
